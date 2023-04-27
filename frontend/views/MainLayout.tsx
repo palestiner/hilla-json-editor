@@ -24,25 +24,34 @@ export default function MenuOnLeftLayout() {
   ) as readonly MenuRoute[];
 
   return (
-    <AppLayout className="block h-full" primarySection="drawer">
-      <header slot="drawer">
-        <h1 className="text-l m-0">My App</h1>
+    <AppLayout className="block h-full"
+               primarySection="drawer">
+      <header slot="drawer"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                borderBottom: '1px solid var(--lumo-contrast-10pct)',
+                minHeight: '57px'
+              }}>
+        <h1 className="text-l m-0">Json Editor</h1>
       </header>
-      <Scroller slot="drawer" scroll-direction="vertical">
+      <Scroller slot="drawer"
+                scroll-direction="vertical">
         <nav>
-          {menuRoutes.map(({ path, handle: { icon, title } }) => (
+          {menuRoutes.map(({path, handle: {icon, title}}) => (
             <NavLink
-              className={({ isActive }) => `${css.navlink} ${isActive ? css.navlink_active : ''}`}
+              className={({isActive}) => `${css.navlink} ${isActive ? css.navlink_active : ''}`}
+              style={{marginBottom: "10px"}}
               key={path}
-              to={path}
-            >
-              {({ isActive }) => (
-                <Item key={path} selected={isActive}>
+              to={path}>
+              {({isActive}) => (
+                <Item key={path}
+                      selected={isActive}>
                   <span
                     className={css.navicon}
-                    style={{ '--mask-image': `url('line-awesome/svg/${icon}.svg')` } as any}
-                    aria-hidden="true"
-                  ></span>
+                    style={{'--mask-image': `url('line-awesome/svg/${icon}.svg')`} as any}
+                    aria-hidden="true">
+                  </span>
                   {title}
                 </Item>
               )}
@@ -50,15 +59,15 @@ export default function MenuOnLeftLayout() {
           ))}
         </nav>
       </Scroller>
-      <footer slot="drawer" />
-
-      <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
-      <h2 slot="navbar" className="text-l m-0">
+      <footer slot="drawer"/>
+      <DrawerToggle slot="navbar"
+                    aria-label="Menu toggle"></DrawerToggle>
+      <h2 slot="navbar"
+          className="text-l m-0">
         {currentTitle}
       </h2>
-
-      <Suspense fallback={<Placeholder />}>
-        <Outlet />
+      <Suspense fallback={<Placeholder/>}>
+        <Outlet/>
       </Suspense>
     </AppLayout>
   );

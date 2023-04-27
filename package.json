@@ -16,10 +16,19 @@
     "@hilla/react-components": "2.0.3",
     "@polymer/polymer": "3.5.1",
     "@vaadin-component-factory/vcf-nav": "1.1.0",
+    "@vaadin/bundles": "24.0.3",
     "@vaadin/common-frontend": "0.0.18",
+    "@vaadin/icon": "24.0.3",
+    "@vaadin/icons": "24.0.3",
+    "@vaadin/polymer-legacy-adapter": "24.0.3",
     "@vaadin/router": "1.7.5",
+    "@vaadin/tooltip": "24.0.3",
+    "@vaadin/vaadin-lumo-styles": "24.0.3",
+    "@vaadin/vaadin-material-styles": "24.0.3",
+    "@vaadin/vaadin-themable-mixin": "24.0.3",
     "classnames": "^2.3.2",
     "construct-style-sheets-polyfill": "3.1.0",
+    "jsoneditor": "^9.10.0",
     "lit": "2.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -66,7 +75,16 @@
     "@hilla/frontend": "$@hilla/frontend",
     "@hilla/form": "$@hilla/form",
     "@hilla/generator-typescript-plugin-backbone": "$@hilla/generator-typescript-plugin-backbone",
-    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli"
+    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli",
+    "@vaadin/bundles": "$@vaadin/bundles",
+    "@vaadin/icon": "$@vaadin/icon",
+    "@vaadin/tooltip": "$@vaadin/tooltip",
+    "@vaadin/icons": "$@vaadin/icons",
+    "@vaadin/polymer-legacy-adapter": "$@vaadin/polymer-legacy-adapter",
+    "@vaadin/vaadin-themable-mixin": "$@vaadin/vaadin-themable-mixin",
+    "@vaadin/vaadin-lumo-styles": "$@vaadin/vaadin-lumo-styles",
+    "@vaadin/vaadin-material-styles": "$@vaadin/vaadin-material-styles",
+    "jsoneditor": "$jsoneditor"
   },
   "vaadin": {
     "dependencies": {
@@ -82,8 +100,16 @@
       "@hilla/generator-typescript-utils": "2.0.5",
       "@hilla/react-components": "2.0.3",
       "@polymer/polymer": "3.5.1",
+      "@vaadin/bundles": "24.0.3",
       "@vaadin/common-frontend": "0.0.18",
+      "@vaadin/icon": "24.0.3",
+      "@vaadin/icons": "24.0.3",
+      "@vaadin/polymer-legacy-adapter": "24.0.3",
       "@vaadin/router": "1.7.5",
+      "@vaadin/tooltip": "24.0.3",
+      "@vaadin/vaadin-lumo-styles": "24.0.3",
+      "@vaadin/vaadin-material-styles": "24.0.3",
+      "@vaadin/vaadin-themable-mixin": "24.0.3",
       "construct-style-sheets-polyfill": "3.1.0",
       "lit": "2.6.1"
     },
@@ -103,6 +129,6 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "594d22ba691fbd651bb9ed77858d9e2c70ec6667d9cd8a283339cd5b691b1ce9"
+    "hash": "33db6f3273dba51a8ef19e998727a00139f3f651523472ce9390982d3933de04"
   }
 }
