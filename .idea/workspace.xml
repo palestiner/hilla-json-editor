@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fe988ff-eb07-4efe-b73f-9cc42dd89e25" name="Changes" comment="added json browser placeholder">
+    <list default="true" id="0fe988ff-eb07-4efe-b73f-9cc42dd89e25" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/palestiner/jsoneditor/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/palestiner/jsoneditor/dao/JsonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/palestiner/jsoneditor/model/Json.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/palestiner/jsoneditor/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -103,7 +105,7 @@
       <updated>1682592164897</updated>
       <workItem from="1682592165862" duration="921000" />
       <workItem from="1682593136050" duration="700000" />
-      <workItem from="1682593859376" duration="8081000" />
+      <workItem from="1682593859376" duration="9261000" />
     </task>
     <task id="LOCAL-00001" summary="added json browser placeholder">
       <created>1682601641471</created>
@@ -112,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682601641471</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring main packages">
+      <created>1682602087746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682602087746</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added json browser placeholder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added json browser placeholder" />
+    <MESSAGE value="refactoring main packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring main packages" />
   </component>
 </project>
