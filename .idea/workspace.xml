@@ -128,7 +128,7 @@
       <workItem from="1682593136050" duration="700000" />
       <workItem from="1682593859376" duration="20381000" />
       <workItem from="1682657098556" duration="904000" />
-      <workItem from="1682658046339" duration="16793000" />
+      <workItem from="1682658046339" duration="17470000" />
     </task>
     <task id="LOCAL-00001" summary="added json browser placeholder">
       <created>1682601641471</created>
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682854096388</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactoring clearTimeout">
+      <created>1682854758387</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682854758387</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +176,7 @@
     <MESSAGE value="refactoring main packages" />
     <MESSAGE value="added dao layer" />
     <MESSAGE value="created json editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="created json editor" />
+    <MESSAGE value="refactoring clearTimeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring clearTimeout" />
   </component>
 </project>

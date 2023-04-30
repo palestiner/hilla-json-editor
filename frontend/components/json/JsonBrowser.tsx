@@ -41,7 +41,7 @@ export default function JsonBrowser() {
   function saveJson() {
     save(name, content).then(json => {
       setJsonToEdit(json)
-      setJsons([...jsons, json])
+      setJsons([...jsons, json].sort((a, b) => a.name < b.name ? -1 : 1))
     });
   }
 
@@ -98,10 +98,9 @@ export default function JsonBrowser() {
       <Grid style={{width: '100%', borderLeft: 'none'}}
             items={jsons}
             selectedItems={selectedJsons}
-            onSelectedItemsChanged={({detail: {value}}) =>
-              setSelectedJsons(value)
-            }
-            theme="column-borders">
+            onSelectedItemsChanged={({detail: {value}}) => setSelectedJsons(value)}
+            onDataProviderChanged={e => setSelectedJsons([])}
+            theme="column-borders row-stripes">
         <GridSelectionColumn></GridSelectionColumn>
         <GridColumn path="name"/>
         <GridColumn path="content"/>
