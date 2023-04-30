@@ -36,7 +36,6 @@ export default function JsonBrowser() {
       setName('')
       setContent('')
     }, 150);
-    clearTimeout(timeoutNumber)
   }
 
   function saveJson() {
