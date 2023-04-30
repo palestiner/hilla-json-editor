@@ -101,7 +101,7 @@ export default function JsonBrowser() {
             onSelectedItemsChanged={({detail: {value}}) => setSelectedJsons(value)}
             onDataProviderChanged={e => setSelectedJsons([])}
             theme="column-borders row-stripes">
-        <GridSelectionColumn></GridSelectionColumn>
+        <GridSelectionColumn width="60px"/>
         <GridColumn path="name"/>
         <GridColumn path="content"/>
       </Grid>

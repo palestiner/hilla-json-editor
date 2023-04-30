@@ -1,4 +1,4 @@
-import MainView from 'Frontend/views/helloreact/MainView.js';
+import MainView from 'Frontend/views/main/MainView.js';
 import MainLayout from 'Frontend/views/MainLayout.js';
 import { lazy } from 'react';
 import { createBrowserRouter, IndexRouteObject, NonIndexRouteObject, useMatches } from 'react-router-dom';

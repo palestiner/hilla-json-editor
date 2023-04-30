@@ -128,7 +128,7 @@
       <workItem from="1682593136050" duration="700000" />
       <workItem from="1682593859376" duration="20381000" />
       <workItem from="1682657098556" duration="904000" />
-      <workItem from="1682658046339" duration="17470000" />
+      <workItem from="1682658046339" duration="18098000" />
     </task>
     <task id="LOCAL-00001" summary="added json browser placeholder">
       <created>1682601641471</created>
@@ -165,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682854758387</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="clear selected on items change">
+      <created>1682855542429</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682855542429</updated>
+    </task>
+    <task id="LOCAL-00007" summary="renamed main folder">
+      <created>1682855891416</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682855891416</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +191,9 @@
     <MESSAGE value="added dao layer" />
     <MESSAGE value="created json editor" />
     <MESSAGE value="refactoring clearTimeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring clearTimeout" />
+    <MESSAGE value="clear selected on items change" />
+    <MESSAGE value="rename main folder" />
+    <MESSAGE value="renamed main folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed main folder" />
   </component>
 </project>
