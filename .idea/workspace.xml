@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fe988ff-eb07-4efe-b73f-9cc42dd89e25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/components/json/JsonEditor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/helloreact/HelloReactView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/helloreact/MainView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/application/endpoints/helloreact/HelloReactEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/json/JsonBrowser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/json/JsonBrowser.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +17,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+        <option value="CSS File" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -74,7 +69,9 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "js.last.introduce.type": "CONST",
     "last_opened_file_path": "C:/Users/megap/code/hilla-json-editor",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,14 +89,32 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="hilla-json-editor" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.application.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.palestiner.jsoneditor.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.palestiner.jsoneditor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,11 +126,57 @@
       <updated>1682592164897</updated>
       <workItem from="1682592165862" duration="921000" />
       <workItem from="1682593136050" duration="700000" />
-      <workItem from="1682593859376" duration="7226000" />
+      <workItem from="1682593859376" duration="20381000" />
+      <workItem from="1682657098556" duration="904000" />
+      <workItem from="1682658046339" duration="17470000" />
     </task>
+    <task id="LOCAL-00001" summary="added json browser placeholder">
+      <created>1682601641471</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682601641471</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactoring main packages">
+      <created>1682602087746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682602087746</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added dao layer">
+      <created>1682603303322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682603303322</updated>
+    </task>
+    <task id="LOCAL-00004" summary="created json editor">
+      <created>1682854096388</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682854096388</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactoring clearTimeout">
+      <created>1682854758387</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682854758387</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added json browser placeholder" />
+    <MESSAGE value="refactoring main packages" />
+    <MESSAGE value="added dao layer" />
+    <MESSAGE value="created json editor" />
+    <MESSAGE value="refactoring clearTimeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring clearTimeout" />
   </component>
 </project>
