@@ -9,4 +9,5 @@ public interface JsonRepository extends ListCrudRepository<Json, String> {
 
     List<Json> findAllByName(String name);
 
+    List<Json> findByOrderByName();
 }

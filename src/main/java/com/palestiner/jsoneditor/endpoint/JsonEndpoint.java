@@ -22,7 +22,7 @@ public class JsonEndpoint {
     }
 
     public List<Json> findAll() {
-        return jsonRepository.findAll();
+        return jsonRepository.findByOrderByName();
     }
 
     public Json findById(String id) {
