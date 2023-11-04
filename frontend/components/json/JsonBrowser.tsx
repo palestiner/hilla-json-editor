@@ -11,39 +11,45 @@ import { Grid } from '@hilla/react-components/Grid'
 import { GridColumn } from '@hilla/react-components/GridColumn'
 import { TextField } from '@hilla/react-components/TextField'
 import { GridSelectionColumn } from '@hilla/react-components/GridSelectionColumn'
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/ext-language_tools";
-import { TextArea } from '@hilla/react-components/TextArea'
+import { Editor } from '@monaco-editor/react'
+import '@vaadin/icons'
+import { Icon } from '@hilla/react-components/Icon'
+import { Checkbox } from '@hilla/react-components/Checkbox'
+import { CheckboxGroup } from '@hilla/react-components/CheckboxGroup'
 
 export default function JsonBrowser() {
   const [jsons, setJsons] = useState<Json[]>([])
   const [jsonEditorShow, setJsonEditorShow] = useState(false)
   const [name, setName] = useState('')
   const [content, setContent] = useState('')
+  const [disabled, setDisabled] = useState(false)
   const [updateBtnClicked, setUpdateBtnClicked] = useState(false)
   const [createBtnClicked, setCreateBtnClicked] = useState(false)
   const [selectedJsons, setSelectedJsons] = useState<Json[]>([])
   const [jsonToEdit, setJsonToEdit] = useState(JsonModel.createEmptyValue())
+  const [saveBtnDisabled, setSaveBtnDisabled] = useState(false)
+  const [filteredJsons, setFilteredJsons] = useState<Json[]>([])
 
   useEffect(() => {
-    findAll().then(setJsons)
+    findAll().then(fetchedJsons => {
+      setJsons(fetchedJsons)
+      setFilteredJsons(fetchedJsons)
+    })
   }, [])
+
+  useEffect(() => {
+    setFilteredJsons(jsons)
+  }, [jsons]);
 
   function resetStateOnCloseEditorDialog() {
     setJsonEditorShow(false)
     setUpdateBtnClicked(false)
     setCreateBtnClicked(false)
     setSelectedJsons([])
-    const timeoutNumber = setTimeout(() => {
-      setName('')
-      setContent('')
-    }, 150)
   }
 
   function saveJson() {
-    save(name, content).then(json => {
+    save(name, content, disabled).then(json => {
       setJsonToEdit(json)
       setJsons([...jsons, json].sort((a, b) => {
         if (a.name && b.name) {
@@ -59,12 +65,16 @@ export default function JsonBrowser() {
     jsonToUpdate.id = jsonToEdit.id
     jsonToUpdate.name = name
     jsonToUpdate.content = content
+    jsonToUpdate.disabled = disabled
+    console.log(jsonToUpdate)
     update(jsonToUpdate).then(value => {
+      console.log(value)
       setJsonToEdit(value)
       setJsons(jsons.map(json => {
         if (json.id === value.id) {
           return value
-        } else return json
+        }
+        return json
       }))
     })
   }
@@ -84,6 +94,9 @@ export default function JsonBrowser() {
               id="create-btn"
               theme="primary"
               onClick={() => {
+                setName('')
+                setContent('')
+                setDisabled(false)
                 setJsonEditorShow(true)
                 setCreateBtnClicked(true)
               }}>
@@ -94,23 +107,43 @@ export default function JsonBrowser() {
               theme="secondary"
               onClick={() => {
                 setJsonToEdit(selectedJsons[0])
-                setName(selectedJsons[0].name || '')
-                setContent(selectedJsons[0].content || '')
+                setName(selectedJsons[0].name)
+                setContent(selectedJsons[0].content)
+                setDisabled(selectedJsons[0].disabled)
                 setJsonEditorShow(true)
                 setUpdateBtnClicked(true)
               }}
-              disabled={!(selectedJsons.length === 1)}>Edit</Button>
+              disabled={!(selectedJsons.length === 1)}>
+            Edit
+          </Button>
           <Button
               id="delete-btn"
               theme="secondary error"
               onClick={() => {
                 deleteSelectedJsons(selectedJsons)
               }}
-              disabled={!(selectedJsons.length > 0)}>Delete</Button>
+              disabled={!(selectedJsons.length > 0)}>
+            Delete
+          </Button>
+          <TextField
+              placeholder="Search"
+              style={{ width: '50%' }}
+              onValueChanged={(e) => {
+                const searchTerm = (e.detail.value || '').trim().toLowerCase();
+                setFilteredJsons(
+                    jsons.filter(
+                        ({ name }) =>
+                            !searchTerm || name.toLowerCase().includes(searchTerm)
+                    )
+                )
+              }}>
+            <Icon slot="prefix"
+                  icon="vaadin:search"></Icon>
+          </TextField>
         </HorizontalLayout>
         <Grid
             style={{ width: '100%', borderLeft: 'none' }}
-            items={jsons}
+            items={filteredJsons}
             selectedItems={selectedJsons}
             onSelectedItemsChanged={({ detail: { value } }) => setSelectedJsons(value)}
             onActiveItemChanged={({ detail: { value } }) => {
@@ -120,6 +153,7 @@ export default function JsonBrowser() {
             theme="column-borders row-stripes">
           <GridSelectionColumn width="60px" />
           <GridColumn path="name" />
+          <GridColumn path="disabled" />
           <GridColumn path="content" />
         </Grid>
         <Dialog
@@ -139,6 +173,7 @@ export default function JsonBrowser() {
                   Cancel
                 </Button>
                 <Button
+                    disabled={saveBtnDisabled}
                     theme="primary"
                     onClick={() => {
                       if (createBtnClicked) saveJson()
@@ -158,31 +193,42 @@ export default function JsonBrowser() {
                 label="Name"
                 value={name}
                 onChange={e => setName(e.target.value)} />
-            <TextArea
-                id="content-field"
-                style={{ width: '100%' }}
-                label="Content"
+            <CheckboxGroup
+                onValueChanged={e => {
+                  // @ts-ignore
+                  const val = e.currentTarget.value[0]
+                  setDisabled(!!val)
+                }}>
+              <Checkbox
+                  id="disabled-field"
+                  label="Disabled"
+                  checked={disabled} />
+            </CheckboxGroup>
+            {"Content"}
+            <Editor
+                className="json-editor"
+                height="50vh"
+                language="json"
+                theme="light"
                 value={content}
-                onChange={e => setContent(e.target.value)} />
-
-            {/* @ts-ignore*/}
-            <AceEditor
-                mode="json"
-                width="100%"
-                theme="textmate"
-                fontSize={20}
-                name="json-editor"
-                tabSize={2}
-                value={content}
-                onChange={(value: string) => setContent(value)}
-                editorProps={{ $blockScrolling: true }}
-                setOptions={{
-                  enableBasicAutocompletion: true,
-                  enableLiveAutocompletion: true,
-                  enableSnippets: true,
-                  showLineNumbers: true,
+                onChange={(value) => setContent(value || '')}
+                onValidate={markers => {
+                  setSaveBtnDisabled(markers.length !== 0)
+                }}
+                options={{
                   tabSize: 2,
-                }} />
+                  lineNumbers: "on",
+                  fontSize: 16,
+                  formatOnType: true,
+                  autoClosingBrackets: "always",
+                  autoClosingComments: "always",
+                  autoClosingDelete: "always",
+                  autoClosingOvertype: "always",
+                  autoClosingQuotes: "always",
+                  autoSurround: "languageDefined",
+                  minimap: { enabled: false },
+                }}
+            />
           </VerticalLayout>
         </Dialog>
       </VerticalLayout>

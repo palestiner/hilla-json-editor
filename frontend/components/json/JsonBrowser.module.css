@@ -6,3 +6,7 @@ vaadin-vertical-layout {
 vaadin-vertical-layout slot {
     min-height: 500px;
 }
+
+.json-editor {
+    border: black solid 1px;
+}

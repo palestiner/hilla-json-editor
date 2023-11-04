@@ -30,8 +30,8 @@ public class JsonEndpoint {
                 .orElseThrow(jsonNotFoundExceptionSupplier(id));
     }
 
-    public Json save(String name, String content) {
-        return jsonRepository.save(new Json(name, content));
+    public Json save(String name, String content, boolean disabled) {
+        return jsonRepository.save(new Json(name, content, disabled));
     }
 
     public List<Json> findByName(String name) {
@@ -49,6 +49,7 @@ public class JsonEndpoint {
                 .map(json -> {
                     json.setName(jsonForUpdate.getName());
                     json.setContent(jsonForUpdate.getContent());
+                    json.setDisabled(jsonForUpdate.isDisabled());
                     jsonRepository.save(json);
                     return json;
                 })

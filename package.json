@@ -14,6 +14,7 @@
     "@hilla/generator-typescript-plugin-push": "2.1.9",
     "@hilla/generator-typescript-utils": "2.1.9",
     "@hilla/react-components": "2.1.7",
+    "@monaco-editor/react": "^4.6.0",
     "@polymer/polymer": "^3.5.1",
     "@vaadin-component-factory/vcf-nav": "1.1.0",
     "@vaadin/bundles": "24.1.7",
@@ -26,13 +27,11 @@
     "@vaadin/vaadin-lumo-styles": "24.1.7",
     "@vaadin/vaadin-material-styles": "24.1.7",
     "@vaadin/vaadin-themable-mixin": "24.1.7",
-    "ace-builds": "^1.18.0",
     "classnames": "^2.3.2",
     "construct-style-sheets-polyfill": "3.1.0",
     "jsoneditor": "^9.10.0",
     "lit": "2.7.6",
     "react": "^18.2.0",
-    "react-ace": "^10.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
   },
@@ -88,8 +87,7 @@
     "@vaadin/vaadin-lumo-styles": "$@vaadin/vaadin-lumo-styles",
     "@vaadin/vaadin-material-styles": "$@vaadin/vaadin-material-styles",
     "jsoneditor": "$jsoneditor",
-    "ace-builds": "$ace-builds",
-    "react-ace": "$react-ace"
+    "@monaco-editor/react": "$@monaco-editor/react"
   },
   "vaadin": {
     "dependencies": {
@@ -136,6 +134,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "79c99d81fb5424f1abbcc27ed9eb0f3483abf8dfe570368b4badb361bd07be03"
+    "hash": "abb81368edd648a252316084b3cf7f4fbf9205b0aa10e0430d140afe49386e78"
   }
 }

@@ -46,3 +46,22 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootBuildImage {
+    def defaultRegistry = 'palestiner'
+    String REGISTRY = defaultRegistry
+    ext {
+        File envFile = file('.env') as File
+        if (envFile.exists()) {
+            def dotEnvProps = new Properties()
+            envFile.withInputStream { dotEnvProps.load(it) }
+            dotEnvProps.entrySet().forEach { set(it.key as String, it.value) }
+            REGISTRY = dotEnvProps.get('REGISTRY') ?: defaultRegistry
+        }
+    }
+    environment['BP_JVM_VERSION'] = java.sourceCompatibility.toString()
+    imageName = "${REGISTRY}/${rootProject.name}:${version}"
+    hilla {
+        productionMode = true
+    }
+}
